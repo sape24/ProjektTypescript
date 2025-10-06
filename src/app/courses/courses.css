@@ -1,0 +1,59 @@
+#tablegrid{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+    gap: 20px;
+    font-size: 1.3em;
+}
+
+#coursename, #coursecode, #progression{
+    cursor: pointer;    
+}
+
+#coursetable th ,#coursetable td{
+    border-bottom: 1px solid black;
+}
+
+#coursetable tr:first-child, #coursetable td:first-child {
+    border-right: 1px solid black;
+}
+
+#coursetable tr:last-child, #coursetable td:last-child{
+    border-left: 1px solid black;
+}
+
+#coursetable td{
+    padding: 0.5%;
+}
+
+#filtertable{
+    font-size: 1.3em;
+    border: 2px solid black;
+    padding: 1%;
+    border-radius: 12px;
+}
+
+@media (max-width: 800px){
+    #tablegrid{
+        margin: 0%;
+    }
+
+    #coursetable th {
+    white-space: normal;
+    word-break: break-word ;
+  }
+
+  coursename, #coursecode, #progression{
+    width: 33%;   
+}
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    padding: 2%;
+}

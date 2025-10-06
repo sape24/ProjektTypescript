@@ -1,0 +1,25 @@
+<div id="tablegrid">
+        <input type="text" (input)="searchInput.set($any($event.target).value)" id="filtertable" placeholder="Sök efter kurskod eller kursnamn">
+        <table id="coursetable">
+            <thead>
+                <tr>
+                    <th (click)="sortList('courseCode')" id="courseCode">Kurskod</th>
+                    <th (click)="sortList('courseName')" id="courseName">Kursnamn</th>
+                    <th (click)="sortList('points')" id="points">Poäng</th>
+                    <th (click)="sortList('subjectCode')" id="subjectCode">Ämne</th>
+                    <th (click)="sortList('syllabus')" id="syllabus">Kursplan</th>
+                    <th id="addToRam">Lägg till</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of filteredList()">
+                <td>{{course.courseCode}}</td>
+                <td>{{course.courseName}}</td>
+                <td>{{course.points}}</td>
+                <td>{{course.subjectCode}}</td>
+                <td>{{course.syllabus}}</td>
+                <td><button matButton="tonal" >Basic</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
