@@ -1,5 +1,12 @@
 <div id="tablegrid">
         <input type="text" (input)="searchInput.set($any($event.target).value)" id="filtertable" placeholder="Sök efter kurskod eller kursnamn">
+        <mat-form-field>
+            <mat-label>Välj ämne</mat-label>
+             <mat-select (selectionChange)="selectedSubject.set($event.value)">
+                <mat-option value="">Alla</mat-option>
+                <mat-option *ngFor="let sub of subjects()" [value]="sub">{{sub}}</mat-option>
+            </mat-select>
+        </mat-form-field>
         <table id="coursetable">
             <thead>
                 <tr>
@@ -17,8 +24,11 @@
                 <td>{{course.courseName}}</td>
                 <td>{{course.points}}</td>
                 <td>{{course.subjectCode}}</td>
-                <td>{{course.syllabus}}</td>
-                <td><button matButton="tonal" >Basic</button></td>
+                <td><a mat-icon-button [href]="course.syllabus" target="_blank" rel="noopener">
+                    <mat-icon>open_in_new</mat-icon>
+                    </a>
+                </td>
+                <td><button matButton="tonal" >Lägg till</button></td>
                 </tr>
             </tbody>
         </table>
