@@ -1,0 +1,42 @@
+#tablegrid{
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+    gap: 20px;
+    font-size: 1.3em;
+    align-items: center;
+    max-width: 100%;
+}
+
+#tablecontent td{
+    text-align: center;
+}
+
+#coursetable{
+    border-collapse: separate;
+    border-spacing: 15px;
+    table-layout: auto;
+    word-break: break-word;
+}
+
+@media (max-width:800px) {
+    #coursetable{
+        font-size: 0.8rem;
+        border-spacing: 4px;
+        max-width: 100%;
+    }     
+
+    #coursetable td, th{
+    text-align: center;
+    padding: 2px;
+    border: 0.5px solid black;
+
+    }
+
+    #tablegrid{
+        margin: 0;
+        gap: 5px;
+    }
+}

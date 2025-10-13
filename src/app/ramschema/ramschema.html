@@ -1,1 +1,30 @@
-<p>ramschema works!</p>
+<div id="tablegrid">
+    <h2>Mitt Ramschema</h2>
+    <p>Antal valda kurser: {{savedCourses().length}} | Summa poäng: {{totalPoints()}}</p>
+    <table id="coursetable">
+        <thead>
+            <tr>
+                <th id="courseCode">Kurskod</th>
+                <th id="courseName">Kursnamn</th>
+                <th id="points">Poäng</th>
+                <th id="subjectCode">Ämne</th>
+                <th id="syllabus">Kursplan</th>
+                <th id="removeFromRam">Ta bort</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="tablecontent" *ngFor="let course of savedCourses()">
+                <td>{{course.courseCode}}</td>
+                <td>{{course.courseName}}</td>
+                <td>{{course.points}}</td>
+                <td>{{course.subjectCode}}</td>
+                <td>
+                    <a mat-icon-button [href]="course.syllabus" target="_blank" rel="noopener">
+                    <mat-icon>open_in_new</mat-icon>
+                    </a>
+                </td>
+                <td><button matButton="tonal" (click)="removeCourse(course.courseCode)">Ta bort</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
