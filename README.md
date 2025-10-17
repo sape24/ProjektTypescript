@@ -1,5 +1,8 @@
 # Praktisk Laboration (Projektuppgift)
 
+## Bedömning
+Jag har fokuserat på grundkraven i detta projekt.
+
 ## Beskrivning
 En webbapplikation skapad i Angular som hämtar mittuniversitetets kurser från en JSON-fil och presenterar den i tabellformat.
 Applikationen består av två undersidor en för att visa kurser och en för ramschemat.
